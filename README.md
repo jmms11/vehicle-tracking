@@ -5,7 +5,7 @@
 Pasos para ejecutar los servicios.
 
 1. Importar desde postman la colección:
-https://github.com/jmms11/mutants-meli/blob/main/Mutants.postman_collection.json
+https://github.com/jmms11/vehicle-tracking/blob/main/Teclogi.postman_collection.json
 	en la carpeta base del repositorio.
 	
 2. los request ya se encuentran en app preparados para ejecutar desde postman:
