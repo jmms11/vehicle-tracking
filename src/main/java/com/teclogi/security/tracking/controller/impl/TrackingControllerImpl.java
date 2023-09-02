@@ -22,7 +22,7 @@ import com.teclogi.security.tracking.service.dto.SatellitesInformationDTO;
 @RequestMapping("/tracking")
 public class TrackingControllerImpl implements ITrackingController {
 	/**
-	 * Inicialización al servicio interno que realiza el tracking
+	 * Inyección de servicio interno que realiza el tracking
 	 */
 	@Autowired
 	ITrackingService trackingService;

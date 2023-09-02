@@ -37,20 +37,25 @@
 			"response": []
 		},
 		{
-			"name": "https://teclogi-397722.uc.r.appspot.com/theft",
+			"name": "https://thief-397807.ue.r.appspot.com/theft",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"money\": [2,7,9,3,1]\r\n}"
+					"raw": "{\r\n    \"money\": [2,7,9,3,1]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "https://teclogi-397722.uc.r.appspot.com/theft",
+					"raw": "https://thief-397807.ue.r.appspot.com/theft",
 					"protocol": "https",
 					"host": [
-						"teclogi-397722",
-						"uc",
+						"thief-397807",
+						"ue",
 						"r",
 						"appspot",
 						"com"

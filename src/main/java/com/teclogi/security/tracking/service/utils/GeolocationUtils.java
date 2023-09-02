@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.teclogi.security.tracking.service.dto.SatelliteDTO;
 
 /**
+ * Utilides para geolocalización
  * @author JhonMauricio
  *
  */
@@ -24,14 +25,13 @@ public class GeolocationUtils {
      * @return
      */
     public Point2D[] triangulate(SatelliteDTO s1, SatelliteDTO s2, SatelliteDTO s3) {
-        // Calcular las distancias entre los getPositions de las circunferencias
+        // Se calcula las distancias entre los  satelites
         double d12 = s1.getPosition().distance(s2.getPosition());
         double d13 = s1.getPosition().distance(s3.getPosition());
         double d23 = s2.getPosition().distance(s3.getPosition());
 
-        // Calcular las coordenadas de los puntos de intersección
+        // Se calcula las coordenadas de los puntos de intersección
         if (d12 <= s1.getRadius() + s2.getRadius() && d13 <= s1.getRadius() + s3.getRadius() && d23 <= s2.getRadius() + s3.getRadius()) {
-            // Las circunferencias se intersectan
             double x1 = s1.getPosition().getX();
             double y1 = s1.getPosition().getY();
             double r1 = s1.getRadius();
@@ -42,7 +42,7 @@ public class GeolocationUtils {
             double y3 = s3.getPosition().getY();
             double r3 = s3.getRadius();
 
-            // Calcular las coordenadas de los puntos de intersección
+            // Se calcula las coordenadas de los puntos de intersección
             double a = 2 * (x1 - x2);
             double b = 2 * (y1 - y2);
             double c = r2 * r2 - r1 * r1 - x2 * x2 + x1 * x1 - y2 * y2 + y1 * y1;

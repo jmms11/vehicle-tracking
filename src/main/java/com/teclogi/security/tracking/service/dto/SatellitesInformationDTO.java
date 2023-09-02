@@ -6,27 +6,38 @@ package com.teclogi.security.tracking.service.dto;
 import java.util.List;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author JhonMauricio
  *
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class SatellitesInformationDTO {
 	
-	private List<SateliteDTO> satellites;
-
-	public List<SateliteDTO> getSatellites() {
+	private List<SatelliteInformationDTO> satellites;
+	
+	/**
+	 * 
+	 * @return satellites
+	 */
+	public List<SatelliteInformationDTO> getSatellites() {
 		return satellites;
 	}
 
-	public void setSatellites(List<SateliteDTO> satellites) {
+	/**
+	 * 
+	 * @param satellites
+	 */
+	public void setSatellites(List<SatelliteInformationDTO> satellites) {
 		this.satellites = satellites;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("SatellitesInformationDTO [satellites=");
+		builder.append(satellites);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

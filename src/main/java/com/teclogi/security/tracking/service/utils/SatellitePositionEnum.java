@@ -1,6 +1,6 @@
 package com.teclogi.security.tracking.service.utils;
 /**
- * 
+ * Información de la posición de los satelites
  * @author JhonMauricio
  *
  */

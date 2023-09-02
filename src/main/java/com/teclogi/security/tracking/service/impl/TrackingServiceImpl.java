@@ -15,7 +15,7 @@ import com.teclogi.security.tracking.service.utils.GeolocationUtils;
 import com.teclogi.security.tracking.service.utils.SatellitePositionEnum;
 
 /**
- * 
+ * Servicio que obtiene datos y llama el calculo de la triangulación
  * @author JhonMauricio
  *
  */
@@ -31,20 +31,20 @@ public class TrackingServiceImpl implements ITrackingService {
      * @return ResponseEntity<Object>
      */
 	@Override
-    public ResponseEntity<Object> tracking(SatellitesInformationDTO satellitesInformationDTO) {
+    public ResponseEntity<Object> tracking(SatellitesInformationDTO satellitesInformation) {
         
     	// Se definen los tres satelites con sus posiciones y distancias(radio)
     	SatelliteDTO sputnik = new SatelliteDTO(SatellitePositionEnum.SPUTNIK.getX(),
     			SatellitePositionEnum.SPUTNIK.getY(), 
-    			satellitesInformationDTO.getSatellites().get(0).getDistance());
+    			satellitesInformation.getSatellites().get(0).getDistance());
     	
     	SatelliteDTO explorer = new SatelliteDTO(SatellitePositionEnum.EXPLORER.getX(), 
     			SatellitePositionEnum.EXPLORER.getY(),
-    			satellitesInformationDTO.getSatellites().get(1).getDistance());
+    			satellitesInformation.getSatellites().get(1).getDistance());
     	
     	SatelliteDTO asterix = new SatelliteDTO(SatellitePositionEnum.ASTERIX.getX(),
     			SatellitePositionEnum.ASTERIX.getY(),
-    			satellitesInformationDTO.getSatellites().get(2).getDistance());
+    			satellitesInformation.getSatellites().get(2).getDistance());
 
         // Se calcula la intersección de los tres satelites
         Point2D[] intersections = geolocationUtils.triangulate(sputnik, explorer, asterix);
@@ -58,7 +58,7 @@ public class TrackingServiceImpl implements ITrackingService {
             	return ResponseEntity.ok(vehicleLocation);
             }
         }
-            return new ResponseEntity<>("No hay intersecciones entre las tres circunferencias.",HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("No hay intersecciones entre los satelites.",HttpStatus.NOT_FOUND);
         
     }
 

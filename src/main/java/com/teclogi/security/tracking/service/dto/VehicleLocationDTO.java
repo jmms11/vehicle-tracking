@@ -12,15 +12,31 @@ public class VehicleLocationDTO {
 	private Point2D position;
 	private boolean isInDanger;
 	
+	/**
+	 * 
+	 * @return position
+	 */
 	public Point2D getPosition() {
 		return position;
 	}
+	/**
+	 * 
+	 * @param position
+	 */
 	public void setPosition(Point2D position) {
 		this.position = position;
 	}
+	/**
+	 * 
+	 * @return isInDanger
+	 */
 	public boolean isInDanger() {
 		return isInDanger;
 	}
+	/**
+	 * 
+	 * @param isInDanger
+	 */
 	public void setInDanger(boolean isInDanger) {
 		this.isInDanger = isInDanger;
 	}
