@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "4708892c-f8c0-4d67-9f56-243c3a4c7a07",
+		"name": "Teclogi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://teclogi-397722.uc.r.appspot.com/tracking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"name\": \"Sputnik\",\r\n            \"distance\": 500\r\n        },\r\n        {\r\n            \"name\": \"Explorer\",\r\n            \"distance\": 282.85\r\n        },\r\n        {\r\n            \"name\": \"Asterix\",\r\n            \"distance\": 600\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://teclogi-397722.uc.r.appspot.com/tracking",
+					"protocol": "https",
+					"host": [
+						"teclogi-397722",
+						"uc",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://teclogi-397722.uc.r.appspot.com/theft",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"money\": [2,7,9,3,1]\r\n}"
+				},
+				"url": {
+					"raw": "https://teclogi-397722.uc.r.appspot.com/theft",
+					"protocol": "https",
+					"host": [
+						"teclogi-397722",
+						"uc",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"theft"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
